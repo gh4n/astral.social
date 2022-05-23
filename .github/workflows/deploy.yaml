@@ -21,5 +21,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY}}
           script: |
-          # git update to latest codebase on main branch
-          cd /path/to/project && git pull
+            cd /path/to/project && git pull
