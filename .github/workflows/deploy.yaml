@@ -21,4 +21,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY}}
           script: |
-            cd /path/to/project && git pull
+            cd /usr/share/nginx/html && git pull
