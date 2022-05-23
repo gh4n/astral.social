@@ -1,0 +1,75 @@
+.wrapper {
+    height: 60vh;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
+html {
+  max-width: 50rem;
+  height: 100%;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+body {
+  font-family: monospace;
+  font-size:20px;
+  background:#ffffff;
+  color:#000000;
+}
+
+img {
+  width: 100%;
+}
+
+a:link {
+  color: rgb(139, 117, 89);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.padded {
+  margin: auto;
+  padding: 50px;
+  width: 100%;
+}
+
+.type {
+  color:#0000;
+  background:
+    linear-gradient(-90deg,#000000 5px,#0000 0) 10px 0,
+    linear-gradient(#000000 0 0) 0 0;
+  background-size:calc(var(--n)*1ch) 200%;
+  -webkit-background-clip:padding-box,text;
+  background-clip:padding-box,text;
+  background-repeat:no-repeat;
+  animation-fill-mode: forwards;
+  animation: 
+   b .7s infinite steps(1),   
+   t calc(var(--n)*.13s) steps(var(--n)) forwards,
+   slidein 0.1s both;
+}
+
+@keyframes slidein {
+  0% {
+    opacity:0;
+  }
+  0.01% {
+    opacity:1;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@keyframes t{
+  from {background-size:0 200%}
+}
+
+@keyframes b{
+  50% {background-position:0 -100%,0 0}
+}
+
