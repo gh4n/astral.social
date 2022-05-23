@@ -1,0 +1,59 @@
+administrator's guide to managing a pubnix
+
+# SSH Forwarding
+
+1. test on local machine
+
+```
+$ ssh -T git@github.com
+# Attempt to SSH in to github
+> Hi username! You've successfully authenticated, but GitHub does not provide
+> shell access.
+```
+
+2. add config to ~/.ssh/ssh_config
+
+```
+Host <example.com>
+  ForwardAgent yes
+```
+
+3. test on remote
+
+```
+$ echo "$SSH_AUTH_SOCK"
+# Print out the SSH_AUTH_SOCK variable
+> /tmp/ssh-4hNGMk8AZX/agent.79453
+```
+
+if the variable is not set then ssh forwarding is not working
+
+with a variable set, test connection to github
+
+```
+$ ssh -T git@github.com
+# Attempt to SSH in to github
+> Hi username! You've successfully authenticated, but GitHub does not provide
+> shell access.
+```
+
+# Fetch code with GHA
+
+1. Set up protected user for github action runner
+2. Allow only that user to source code directory
+
+```
+sudo chown -R <github-actions-user>:<github-actions-user> /var/www/test/public_html
+```
+3. Generate keys
+4. Add private key to github repository secrets
+5. Create Github action workflow
+
+# nginx
+
+
+# Domain management
+
+
+
+# User management
