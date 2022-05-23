@@ -43,13 +43,19 @@ $ ssh -T git@github.com
 2. Allow only that user to source code directory
 
 ```
-sudo chown -R <github-actions-user>:<github-actions-user> /var/www/test/public_html
+sudo chown -R <github-actions-user>:<github-actions-user> <source-code> 
 ```
 3. Generate keys
 4. Add private key to github repository secrets
 5. Create Github action workflow
 
 # nginx
+
+1. make sure the nginx user has access to the source code directory
+
+```
+sudo chown -R www-data: <source-code> 
+```
 
 
 # Domain management
